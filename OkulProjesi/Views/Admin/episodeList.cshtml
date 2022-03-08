@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Entity.ConCrete.Episode>
+@{
+    ViewBag.Title = "episodeList";
+    Layout = "~/Views/Shared/UserTemplate.cshtml";
+}
+
+<div class="container">
+    <table class="table table-dark table-striped table-bordered table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th>ID</th>
+                <th>Bölüm Adı</th>
+                <th>Bölüm Detay</th>
+                <th>Düzenle</th>
+                <th>Sil</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.episodeID</td>
+                <td>@item.episodeName</td>
+                <td>@item.description</td>
+                <td><a href="/Admin/episodeUpdate/@item.episodeID" class="btn btn-primary">Düzenle</a></td>
+                <td><a href="/Admin/episodeDelete/@item.episodeID" class="btn btn-success">Sil</a></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Admin/episodeInsert/" class="btn btn-outline-dark">Yeni Bölüm Ekle</a>
+</div>
+
+

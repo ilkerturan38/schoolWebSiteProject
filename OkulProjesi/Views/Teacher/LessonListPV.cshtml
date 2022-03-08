@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Entity.ConCrete.Lesson>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="d-flex align-items-center mb-3">Girilen Tüm Dersler</h5>
+                @foreach (var item in Model)
+                {
+                    <p>@item.lessonName</p>
+                    <div class="progress mb-3" style="height: 5px">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

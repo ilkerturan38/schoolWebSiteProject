@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Entity.ConCrete.StudentvsTeacher>
+@{
+    ViewBag.Title = "studentList";
+    Layout = "~/Views/Shared/UserTemplate.cshtml";
+}
+
+<div class="container">
+    <table class="table table-dark table-striped table-bordered table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th>Ad-Soyad</th>
+                <th>Kimlik</th>
+                <th>Doğum Tarihi</th>
+                <th>Cinsiyet</th>
+                <th>Bölüm</th>
+                <th>Telefon</th>
+                <th>E-mail Adresi</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Student.nameSurname</td>
+                    <td>@item.Student.identity</td>
+                    <td>@item.Student.birthday</td>
+                    <td>@item.Student.gender</td>
+                    <td>@item.Student.Episode.episodeName</td>
+                    <td>@item.Student.phoneNumber</td>
+                    <td>@item.Student.userName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

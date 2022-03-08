@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Entity.ConCrete.Lesson>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/HomeTemplate.cshtml";
+}
+
+<div class="container">
+    <table class="table table-dark table-striped table-bordered table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th>Ders Adı</th>
+                <th>Öğretmen Adı</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.lessonName</td>
+                    <td>@item.teacher.nameSurname</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
